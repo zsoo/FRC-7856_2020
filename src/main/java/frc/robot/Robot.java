@@ -13,6 +13,7 @@ import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
@@ -21,6 +22,7 @@ import frc.robot.subsystems.ExampleSubsystem;
 // 2-11-20 import frc.robot.subsystems.*;
 // 2-11-20 import frc.robot.commands.*;
 // 2-11-20 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Gyro;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -36,6 +38,8 @@ public class Robot extends TimedRobot {
   //public static Suctioncups m_suction;
   public static OI m_oi;
   public static CameraServer server;
+  public static Gyro m_gyro = null;
+  
   
 
   // 2-11-20 TalonSRX _pigeonTalon = new TalonSRX(7);
@@ -60,12 +64,15 @@ public class Robot extends TimedRobot {
     m_train = new Drivetrain();
     //m_shooter = new Shooter();
     //m_suction = new Suctioncups();
+
     m_oi = new OI();
+    m_gyro = new Gyro(m_train.GyroTalon());
     server = CameraServer.getInstance();
     server.startAutomaticCapture();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
+
   }
 
   /**

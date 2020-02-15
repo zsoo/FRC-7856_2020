@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import frc.robot.RobotMap;
 import frc.robot.commands.driveCartesian;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 /**
@@ -41,6 +42,10 @@ public Object Drivetrain;
     mecanumDrive = new MecanumDrive(leftFrontTalon2, leftRearTalon2, rightFrontTalon2, rightRearTalon2);
   }
 
+  public TalonSRX GyroTalon(){
+    return leftFrontTalon;
+  }
+
   public void DriveCartesian(double ySpeed,double xSpeed,double zRotation){
     
     mecanumDrive.driveCartesian(-ySpeed, xSpeed, zRotation);
@@ -48,6 +53,8 @@ public Object Drivetrain;
     System.out.println("x axis value is" +xSpeed); // 2-11-20 Opt-In
     System.out.println("Rotation value is" +zRotation); // 2-11-20 Opt-In
   }
+
+  
 
 
 

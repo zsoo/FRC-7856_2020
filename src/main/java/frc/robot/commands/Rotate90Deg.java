@@ -7,17 +7,18 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.*;
-import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Gryo;
+
+import frc.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+
 /**
  * Add your docs here.
  */
 public class Rotate90Deg extends Command {
+    
     public Rotate90Deg() {
-        requires(Drivetrain);
-        requires(Gryo);
+        requires(Robot.m_train);
+        requires(Robot.m_gyro);
     }
 
     @Override
@@ -26,7 +27,10 @@ public class Rotate90Deg extends Command {
 
     @Override
     protected void execute() {
-        Robot.m_train.Drivetrain
+    
+        double targetAngle = 90;
+        double turnspeed = Robot.m_gyro.rotateSpecificAngle(targetAngle);
+        Robot.m_train.DriveCartesian(0, 0, turnspeed);
     }
 
     @Override
