@@ -102,7 +102,7 @@ public class Gyro extends Subsystem {
   public double driveStaight(){
     getYaw();
     if(currentAngle%360 > 1){
-      rotateSpecificAngle(currentAngle%360)
+      return rotateSpecificAngle(currentAngle%360);
     }else{
       return 0;
     }

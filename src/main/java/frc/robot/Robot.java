@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.ColorWheel;
 import frc.robot.subsystems.ExampleSubsystem;
 // 2-11-20 import frc.robot.subsystems.*;
 // 2-11-20 import frc.robot.commands.*;
@@ -34,6 +35,7 @@ import frc.robot.subsystems.Gyro;
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static Drivetrain  m_train = null;
+  public static ColorWheel m_color = null;
   //public static Shooter m_shooter = null;
   //public static Suctioncups m_suction;
   public static OI m_oi;
@@ -62,11 +64,13 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_train = new Drivetrain();
+    m_color = new ColorWheel();
+    m_gyro = new Gyro(m_train.GyroTalon());
     //m_shooter = new Shooter();
     //m_suction = new Suctioncups();
 
     m_oi = new OI();
-    m_gyro = new Gyro(m_train.GyroTalon());
+    
     server = CameraServer.getInstance();
     server.startAutomaticCapture();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());

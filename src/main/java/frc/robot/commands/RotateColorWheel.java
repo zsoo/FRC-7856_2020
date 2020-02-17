@@ -14,11 +14,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  * Add your docs here.
  */
-public class Rotate90Deg extends Command {
+public class RotateColorWheel extends Command {
     
-    public Rotate90Deg() {
-        requires(Robot.m_train);
-        requires(Robot.m_gyro);
+    public RotateColorWheel() {
+        requires(Robot.m_color);
     }
 
     @Override
@@ -27,10 +26,9 @@ public class Rotate90Deg extends Command {
 
     @Override
     protected void execute() {
-        System.out.println("rotating");
-        double targetAngle = 90;
-        double turnspeed = Robot.m_gyro.rotateSpecificAngle(targetAngle);
-        Robot.m_train.DriveCartesian(0, 0, turnspeed);
+        double turnspeed = 0;
+        System.out.println("Spinnning the Color Wheel");
+        Robot.m_color.DriveCartesian(0, 0, turnspeed);
     }
 
     @Override

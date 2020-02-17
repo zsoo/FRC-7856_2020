@@ -11,6 +11,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.buttons.*;
 import frc.robot.commands.Rotate90Deg;
+import frc.robot.commands.RotateColorWheel;
 import edu.wpi.first.wpilibj.Joystick;
 // 2-11-20 import edu.wpi.first.wpilibj.*;
 //import edu.wpi.first.wpilibj.buttons.*;
@@ -34,6 +35,7 @@ public class OI {
   public Joystick driveController = new Joystick(RobotMap.OI_DRIVER_CONTROLLER);
   public Joystick driverController1 = new Joystick(RobotMap.OI_DRIVER_CONTROLLER_1);
   public JoystickButton Rotate90Button = new JoystickButton(driveController, RobotMap.Rotate90Button);
+  public JoystickButton ColorWheelButton = new JoystickButton(driveController, RobotMap.ColorWheelButton);
   //public JoystickButton CylinderRetractButton = new JoystickButton(driveController, RobotMap.CylinderRetractButton);
   //public JoystickButton SuctionOnButton = new JoystickButton(driveController, RobotMap.SuctionCupsON);
   //public JoystickButton SuctionOffButton = new JoystickButton(driveController, RobotMap.SuctionCupOff);
@@ -56,7 +58,8 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
   public OI(){
-    Rotate90Button.whenPressed(new Rotate90Deg());
+    Rotate90Button.whileHeld(new Rotate90Deg());
+    ColorWheelButton.whileHeld(new RotateColorWheel());
   }
 
 }
