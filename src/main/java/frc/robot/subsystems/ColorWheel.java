@@ -10,10 +10,10 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import frc.robot.RobotMap;
-import frc.robot.commands.driveCartesian;
+// 2-18-20  import frc.robot.commands.driveCartesian;
 import frc.robot.commands.driveColorWheel;
 
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+// 2-18-20 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 /**
@@ -28,8 +28,6 @@ public Object Drivetrain;
 
   public ColorWheel(){
     colorwheel = new WPI_VictorSPX(RobotMap.COLOR_WHEEL);
-
- 
   }
 
   public void DriveCartesian(double ySpeed,double xSpeed,double zRotation){

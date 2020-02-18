@@ -10,10 +10,11 @@ import edu.wpi.first.cameraserver.CameraServer;
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 // 2-11-20 import edu.wpi.first.networktables.NetworkTableEntry;
 // 2-11-20 import edu.wpi.first.networktables.NetworkTableInstance;
+import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.command.Subsystem;
+// 2-18-20 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
@@ -33,6 +34,7 @@ import frc.robot.subsystems.Gyro;
  * project.
  */
 public class Robot extends TimedRobot {
+  
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static Drivetrain  m_train = null;
   public static ColorWheel m_color = null;
@@ -68,7 +70,8 @@ public class Robot extends TimedRobot {
     m_gyro = new Gyro(m_train.GyroTalon());
     //m_shooter = new Shooter();
     //m_suction = new Suctioncups();
-
+    
+    RobotMap.init();
     m_oi = new OI();
     
     server = CameraServer.getInstance();

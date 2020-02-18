@@ -7,10 +7,10 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.hal.can.CANMessageNotAllowedException;
-import edu.wpi.first.wpilibj.Talon;
+// 2-18-20 import edu.wpi.first.hal.can.CANMessageNotAllowedException;
+// 2-18-20  import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+// 2-18-20 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.sensors.PigeonIMU;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
@@ -65,7 +65,7 @@ public class Gyro extends Subsystem {
     if(turnSpeed >=1 ){
       turnSpeed = 1;
     }else{
-      turnSpeed = turnSpeed;
+      // 2-18-20  turnSpeed = turnSpeed;
     }
     if(diffAngle < 1){
       TargetAngleReached = true;

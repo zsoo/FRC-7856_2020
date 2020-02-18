@@ -46,4 +46,6 @@ public class RobotMap {
   //Controller Section
 public static final int OI_DRIVER_CONTROLLER_1 = 1;
 public static final int OI_DRIVER_CONTROLLER = 0;
+public static void init() {
+}
 }
