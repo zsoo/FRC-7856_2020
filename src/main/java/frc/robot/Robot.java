@@ -70,7 +70,7 @@ public class Robot extends TimedRobot {
     m_gyro = new Gyro(m_train.GyroTalon());
     //m_shooter = new Shooter();
     //m_suction = new Suctioncups();
-    
+    System.out.println("Checking to see if folder begining since to right github.");
     RobotMap.init();
     m_oi = new OI();
     

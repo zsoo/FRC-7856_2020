@@ -36,7 +36,6 @@ public Object Drivetrain;
     leftRearTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_REAR_TALON);
     rightFrontTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_FRONT_TALON);
     rightRearTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_REAR_TALON);
-
     mecanumDrive = new MecanumDrive(leftFrontTalon, leftRearTalon, rightFrontTalon, rightRearTalon);
   }
 
